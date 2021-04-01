@@ -11,8 +11,8 @@ allprojects {
 		}
 	}
 	
-	``
- ``
+	
+ ```
  2. Add the dependency
  
  implementation 'com.github.resilientbd:basemodule:0.0.1'
