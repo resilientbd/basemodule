@@ -5,17 +5,26 @@
 
 ```Java
 allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
-	}
+    repositories {
+    
+        ...
+        maven { url 'https://jitpack.io' }
+    }
+}
 	
 	
  ```
- 2. Add the dependency
+ 2. Add the dependency in application gradle file
  
- implementation 'com.github.resilientbd:basemodule:0.0.1'
+ ```Java
+ 
+ dependencies {
+
+    ...
+    implementation 'com.github.resilientbd:basemodule:0.0.1'
+}
+
+```
  
  
 
