@@ -1,4 +1,4 @@
-package com.faisal.basemodule;
+package com.faisal.basemodule.util;
 
 import android.content.Context;
 import android.content.ContextWrapper;

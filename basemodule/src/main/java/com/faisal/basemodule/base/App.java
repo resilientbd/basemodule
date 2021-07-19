@@ -6,11 +6,11 @@ import android.app.NotificationManager;
 import android.content.IntentFilter;
 import android.os.Build;
 
-import com.faisal.basemodule.Toaster;
+import com.faisal.basemodule.util.Toaster;
 
 public class App extends Application {
     public static final String COMMON_NOTIFICATION_CHANNEL_ID = "199823";
-    public static final String COMMON_TOASTER_BROADCAST_ACTION = "com.faisal.basemodule.Toaster.ACTION_BROADCAST";
+    public static final String COMMON_TOASTER_BROADCAST_ACTION = "com.faisal.basemodule.util.Toaster.ACTION_BROADCAST";
     private Toaster toasterBroadcstReciever = new Toaster();
     @Override
     public void onCreate() {

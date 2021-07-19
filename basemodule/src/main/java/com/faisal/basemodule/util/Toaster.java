@@ -1,4 +1,4 @@
-package com.faisal.basemodule;
+package com.faisal.basemodule.util;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -21,7 +21,7 @@ public class Toaster extends BroadcastReceiver {
     public static void ShowText(String message)
     {
         Intent intent = new Intent(INTENT_MESSAGE);    //action: "msg"
-        intent.setAction("com.faisal.basemodule.Toaster.ACTION_BROADCAST");
+        intent.setAction("com.faisal.basemodule.util.Toaster.ACTION_BROADCAST");
         intent.putExtra(INTENT_MESSAGE, message);
         GetContext.getApplicationUsingReflection().sendBroadcast(intent);
        Log.d("chkbroadcast","broadcast sent");
