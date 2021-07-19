@@ -18,6 +18,41 @@ public class TimeUtil {
         }
         return rxTime;
     }*/
+   public static long GET_TIME_MILLIS(String formatInput,String inptDateString)//"DD-MM-yyyy HH:mm:ss"
+   {
+
+       try {
+           Date date1 = null;
+
+           date1 = new SimpleDateFormat(formatInput).parse(inptDateString);
+
+           Calendar calendar = Calendar.getInstance();
+           calendar.setTime(Objects.requireNonNull(date1));
+
+
+           //SimpleDateFormat df = new SimpleDateFormat(formatOutput);
+
+           return calendar.getTimeInMillis();
+       } catch (ParseException e) {
+           e.printStackTrace();
+       }
+       return 0;
+   }
+    public static String GetMinSecFromMilli(int milliseconds) {
+        int Minutes = (milliseconds / 1000) / 60;
+        int Seconds = (milliseconds / 1000) % 60;
+        if (Seconds < 59) {
+            if (Seconds < 10) {
+                return "0" + Minutes + ".0" + Seconds;
+            } else {
+                return "0" + Minutes + "." + Seconds;
+            }
+        } else {
+            return "0" + Minutes + "." + Seconds;
+        }
+
+
+    }
 
     public static String GET_TIME(String formatInput, String formatOutput, String inptDateString)//"DD-MM-yyyy HH:mm:ss"
     {

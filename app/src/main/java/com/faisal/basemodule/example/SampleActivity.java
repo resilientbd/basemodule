@@ -19,6 +19,7 @@ public class SampleActivity extends BaseActivity {
     public void startUI() {
         mBinding = (ActivitySampleBinding) getViewDataBinding();
         viewModel = (SampleViewModel) getViewModel(SampleViewModel.class);
+        Toaster.ShowText("Toaster worked with broadcast receiver");
         mBinding.textView.setOnClickListener(v -> {
             Toaster.ShowText("Clicked!!");
         });

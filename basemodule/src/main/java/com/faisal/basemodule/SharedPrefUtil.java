@@ -53,5 +53,17 @@ public class SharedPrefUtil {
         return pref.getBoolean(name, defaultVal);
 
     }
+    public static void ADD_FLOAT_PREFERENCE(Context context, String name, float value) {
+
+        SharedPreferences pref = context.getSharedPreferences(SHARED_PREF, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putFloat(name, value);
+        editor.apply();
+    }
+    public static float GET_FLOAT_PREFERENCE(Context context, String name) {
+        SharedPreferences pref = context.getSharedPreferences(SHARED_PREF, Context.MODE_PRIVATE);
+        return pref.getFloat(name, 0.0f);
+
+    }
 
 }

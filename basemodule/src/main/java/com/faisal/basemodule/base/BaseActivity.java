@@ -1,5 +1,6 @@
 package com.faisal.basemodule.base;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.ViewModelProvider;
 
 
@@ -54,9 +56,6 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        IntentFilter filter = new IntentFilter();
-        filter.addAction("com.faisal.basemodule.Toaster.ACTION_BROADCAST");
-        registerReceiver(new Toaster(),filter);
         viewDataBinding = DataBindingUtil.setContentView(this, setLayoutId());
         startUI();
     }
@@ -78,8 +77,8 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         }
     }
 
-    public AndroidViewModel getViewModel(Class<? extends AndroidViewModel> viewmodel) {
-        return ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication()).create(viewmodel);
+    public AndroidViewModel getViewModel( Class<? extends AndroidViewModel> viewmodel) {
+        return new ViewModelProvider(this).get(viewmodel);
     }
 
     //setting up back functionality with custom view

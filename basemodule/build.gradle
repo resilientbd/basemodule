@@ -29,10 +29,16 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 }
-
+ext{
+    lifecycle_extensions = "2.2.0"
+}
 dependencies {
 
     api 'androidx.appcompat:appcompat:1.1.0'
+    api "androidx.lifecycle:lifecycle-extensions:$lifecycle_extensions"
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.0'
+
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
